@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0f;
+  --card: #12121a;
+  --text: #e8e5ff;
+  --accent: #9b87f5;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.bg-fantasy {
+  background:
+    radial-gradient(60% 80% at 20% 10%, rgba(155, 135, 245, 0.15), transparent 60%),
+    radial-gradient(40% 60% at 80% 0%, rgba(255, 196, 86, 0.08), transparent 60%),
+    linear-gradient(180deg, #0a0a0f, #0a0a0f);
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(155, 135, 245, 0.2), inset 0 0 30px rgba(255, 196, 86, 0.05);
+  border: 1px solid rgba(155, 135, 245, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.grain:before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' opacity='0.06' width='100%25' height='100%25'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'%3E%3C/feColorMatrix%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+@keyframes fadeInSlow {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInSlow {
+  animation: fadeInSlow 1.8s ease-out forwards;
+}
+@keyframes ltPulse {
+  0% { box-shadow: 0 0 0px rgba(155,135,245,0.0); }
+  50% { box-shadow: 0 0 22px rgba(155,135,245,0.45); }
+  100% { box-shadow: 0 0 0px rgba(155,135,245,0.0); }
+}
+.lt-pulse {
+  animation: ltPulse 2.8s ease-in-out 1;
+}
